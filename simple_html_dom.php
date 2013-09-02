@@ -104,7 +104,7 @@ function dump_html_tree($node, $show_attr=true, $deep=0)
 	$node->dump($node);
 }
 
-
+ 
 /**
  * simple html dom node
  * PaperG - added ability for "find" routine to lowercase the value of the selector.
