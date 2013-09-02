@@ -1,6 +1,8 @@
 <?php  
 # RST
 
+echo 'Programul a fost pornit cu succes, va rugam sa nu inchideti terminalul.';
+
 include 'simple_html_dom.php';
 
 define('DATA_FILE', 'rst.txt');
@@ -9,7 +11,7 @@ $categorii_permise = ['Anunturi importante si regulile forumului', 'Bine ai veni
 $auto_open_cats = [];
 $ignore_users = [];
 
-$sleep = 60;
+$sleep = 30;
 for ($i=1; $i < count($argv); $i++){
 	switch($argv[$i]){
 		case '--sleep':
@@ -60,7 +62,7 @@ while(true){
 		if( $posturi[$i]->plaintext != $posturi_vechi[$i] ){
 
 			preg_match('/in (.*?)$/', $posturi[$i]->parent()->plaintext, $match);
-			$cat = trim($match[1]);
+			$cat = htmlspecialchars_decode( trim($match[1]) );
 
 			if( in_array($cat, $categorii_permise) Or $categorii_permise === false ){
 				// In caz ca postul este intr-o categorie care ne place SAU acceptam toate categoriile
@@ -91,7 +93,6 @@ while(true){
 		# In caz ca sunt posturi noi de afisat vom afisa o notificare cu ele
 		exec('notify-send "Notificare RST" "'.implode($alerta_posturi, "\n --------------------------------- \n").'"'); 		
 	}
-
 	$prima = false;
 	sleep($sleep);
 }
