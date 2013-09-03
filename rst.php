@@ -7,9 +7,9 @@ include 'simple_html_dom.php';
 
 define('DATA_FILE', 'rst.txt');
 
-$categorii_permise = ['Anunturi importante si regulile forumului', 'Bine ai venit (aici te poti prezenta)', 'RST Power', 'Exploituri si POCs', 'Competitie [challenges]', 'Bug Bounty', 'Club ShowOff', 'Games Hacks', 'Tutoriale', 'Tutoriale in romana', 'Tutoriale in engleza', 'Tutoriale video', 'Programare', 'Web Development', 'Mobile phones', 'Sisteme de Operare | Discutii Hardware', 'Electronica', 'Wireless Pentesting', 'Black SEO & Monetizare', 'Programe de afiliere', 'Programe WHS SI BHS', 'Articole', 'Programe Hack', 'Programe Securitate', 'Stuff tools', 'RST Market', 'Bloguri si bloggeri', 'Off-topic', 'Stiri Securitate', 'Ajutor', 'CERERI [numai aici]', 'Invitatii trackere', 'Sugestii', 'Linkuri'];
-$auto_open_cats = [];
-$ignore_users = [];
+$categorii_permise = array('Anunturi importante si regulile forumului', 'Bine ai venit (aici te poti prezenta)', 'RST Power', 'Exploituri si POCs', 'Competitie [challenges]', 'Bug Bounty', 'Club ShowOff', 'Games Hacks', 'Tutoriale', 'Tutoriale in romana', 'Tutoriale in engleza', 'Tutoriale video', 'Programare', 'Web Development', 'Mobile phones', 'Sisteme de Operare | Discutii Hardware', 'Electronica', 'Wireless Pentesting', 'Black SEO & Monetizare', 'Programe de afiliere', 'Programe WHS SI BHS', 'Articole', 'Programe Hack', 'Programe Securitate', 'Stuff tools', 'RST Market', 'Bloguri si bloggeri', 'Off-topic', 'Stiri Securitate', 'Ajutor', 'CERERI [numai aici]', 'Invitatii trackere', 'Sugestii', 'Linkuri');
+$auto_open_cats = array();
+$ignore_users = array();
 
 $sleep = 30;
 for ($i=1; $i < count($argv); $i++){
